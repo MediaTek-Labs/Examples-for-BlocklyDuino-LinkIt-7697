@@ -1,0 +1,89 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1" x="38" y="13">
+    <statement name="CONTENT">
+      <block type="variables_set" id="30" inline="true">
+        <field name="TYPE">Boolean</field>
+        <field name="VAR">led</field>
+        <value name="VALUE">
+          <block type="logic_boolean" id="36">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="controls_if" id="42" inline="false">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="variables_get" id="64">
+                <field name="TYPE">Boolean</field>
+                <field name="VAR">led</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="inout_buildin_led" id="76">
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="variables_set" id="81" inline="true">
+                    <field name="TYPE">Boolean</field>
+                    <field name="VAR">led</field>
+                    <value name="VALUE">
+                      <block type="logic_boolean" id="82">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="95" inline="false">
+                        <value name="CONTENT">
+                          <block type="text" id="96">
+                            <field name="TEXT">LED ON</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="inout_buildin_led" id="99">
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="variables_set" id="100" inline="true">
+                    <field name="TYPE">Boolean</field>
+                    <field name="VAR">led</field>
+                    <value name="VALUE">
+                      <block type="logic_boolean" id="101">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="102" inline="false">
+                        <value name="CONTENT">
+                          <block type="text" id="103">
+                            <field name="TEXT">LED OFF</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="110" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="111">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

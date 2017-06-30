@@ -1,0 +1,93 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="572" x="-12" y="-12">
+    <next>
+      <block type="initializes_loop" id="587">
+        <statement name="CONTENT">
+          <block type="grove_oled_display_clear" id="596">
+            <next>
+              <block type="grove_oled_display_set_cursor" id="605" inline="true">
+                <value name="X_POS">
+                  <block type="math_number" id="606">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="Y_POS">
+                  <block type="math_number" id="607">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="grove_oled_display_put" id="632" inline="true">
+                    <field name="TYPE">Number</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="649">
+                        <field name="NUM">1234567</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="grove_oled_display_set_cursor" id="666" inline="true">
+                        <value name="X_POS">
+                          <block type="math_number" id="667">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="Y_POS">
+                          <block type="math_number" id="668">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="grove_oled_display_put" id="677" inline="true">
+                            <field name="TYPE">Float</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="687">
+                                <field name="NUM">3.14156</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="grove_oled_display_set_cursor" id="695" inline="true">
+                                <value name="X_POS">
+                                  <block type="math_number" id="696">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="Y_POS">
+                                  <block type="math_number" id="697">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="grove_oled_display_put" id="705" inline="true">
+                                    <field name="TYPE">String</field>
+                                    <value name="VALUE">
+                                      <block type="text" id="711">
+                                        <field name="TEXT">Hello</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="delay_custom" id="723" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="724">
+                                            <field name="NUM">1000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,188 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="728" x="9" y="-19">
+    <statement name="CONTENT">
+      <block type="serial_println" id="934" inline="false">
+        <value name="CONTENT">
+          <block type="text" id="935">
+            <field name="TEXT">Wi-Fi 開始連線</field>
+          </block>
+        </value>
+        <next>
+          <block type="linkit_wifi_wait_until_ready" id="737" inline="false">
+            <value name="SSID">
+              <block type="text" id="738">
+                <field name="TEXT">MediaTek_Labs</field>
+              </block>
+            </value>
+            <value name="PASSWORD">
+              <block type="text" id="739">
+                <field name="TEXT">84149961</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="946" inline="false">
+                <value name="CONTENT">
+                  <block type="text" id="947">
+                    <field name="TEXT">Wi-Fi 連線成功</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="mcs" id="794" inline="false">
+                    <value name="DEVICEID">
+                      <block type="text" id="795">
+                        <field name="TEXT">Drsls7CQ</field>
+                      </block>
+                    </value>
+                    <value name="DEVICEKEY">
+                      <block type="text" id="796">
+                        <field name="TEXT">kKUGahHDR5Hnp5Nn</field>
+                      </block>
+                    </value>
+                    <statement name="CONTENT">
+                      <block type="mcs_set_display_channel" id="1035" inline="true">
+                        <field name="TYPE">int</field>
+                        <value name="DISPLAY_CHANNEL">
+                          <block type="text" id="1036">
+                            <field name="TEXT">temp</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mcs_set_display_channel" id="1067" inline="true">
+                            <field name="TYPE">int</field>
+                            <value name="DISPLAY_CHANNEL">
+                              <block type="text" id="1068">
+                                <field name="TEXT">humid</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="serial_println" id="954" inline="false">
+                        <value name="CONTENT">
+                          <block type="text" id="955">
+                            <field name="TEXT">MCS 連線成功</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="732">
+        <statement name="CONTENT">
+          <block type="mcs_process" id="837">
+            <next>
+              <block type="variables_set" id="1153" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">t</field>
+                <value name="VALUE">
+                  <block type="grove_temporature_humidity_sensor" id="1107">
+                    <field name="PIN">2</field>
+                    <field name="UNIT">c</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="1173" inline="true">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">h</field>
+                    <value name="VALUE">
+                      <block type="grove_temporature_humidity_sensor" id="1129">
+                        <field name="PIN">2</field>
+                        <field name="UNIT">h</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="mcs_channel2_value" id="1101" inline="true">
+                        <value name="CHANNEL2_VALUE">
+                          <block type="text" id="1102">
+                            <field name="TEXT">temp</field>
+                          </block>
+                        </value>
+                        <value name="SET_VALUE">
+                          <block type="variables_get" id="1187">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">t</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mcs_channel2_value" id="1127" inline="true">
+                            <value name="CHANNEL2_VALUE">
+                              <block type="text" id="1128">
+                                <field name="TEXT">humid</field>
+                              </block>
+                            </value>
+                            <value name="SET_VALUE">
+                              <block type="variables_get" id="1180">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">h</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_print" id="1194" inline="false">
+                                <value name="CONTENT">
+                                  <block type="text" id="1195">
+                                    <field name="TEXT">攝氏溫度 : </field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_println" id="1210" inline="false">
+                                    <value name="CONTENT">
+                                      <block type="variables_get" id="1212">
+                                        <field name="TYPE">Number</field>
+                                        <field name="VAR">t</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="serial_print" id="1226" inline="false">
+                                        <value name="CONTENT">
+                                          <block type="text" id="1227">
+                                            <field name="TEXT">相對溼度 :</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="serial_println" id="1239" inline="false">
+                                            <value name="CONTENT">
+                                              <block type="variables_get" id="1247">
+                                                <field name="TYPE">Number</field>
+                                                <field name="VAR">h</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="delay_custom" id="1149" inline="false">
+                                                <value name="DELAY_TIME">
+                                                  <block type="math_number" id="1150">
+                                                    <field name="NUM">1000</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,55 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1" x="-37" y="-12">
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="serial_print" id="213" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="206">
+                <field name="TEXT">相對溼度 : </field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="205" inline="false">
+                <value name="CONTENT">
+                  <block type="grove_temporature_humidity_sensor" id="193">
+                    <field name="PIN">2</field>
+                    <field name="UNIT">h</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_print" id="221" inline="false">
+                    <value name="CONTENT">
+                      <block type="text" id="222">
+                        <field name="TEXT">攝氏溫度 : </field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="229" inline="false">
+                        <value name="CONTENT">
+                          <block type="grove_temporature_humidity_sensor" id="234">
+                            <field name="PIN">2</field>
+                            <field name="UNIT">c</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="241" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="242">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,46 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="596" x="38" y="-137">
+    <next>
+      <block type="initializes_loop" id="600">
+        <statement name="CONTENT">
+          <block type="servo_write" id="825" inline="true">
+            <field name="PIN">10</field>
+            <value name="ANGLE">
+              <block type="math_number" id="826">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="delay_custom" id="833" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="834">
+                    <field name="NUM">2000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="servo_write" id="847" inline="true">
+                    <field name="PIN">10</field>
+                    <value name="ANGLE">
+                      <block type="math_number" id="848">
+                        <field name="NUM">180</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="849" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="850">
+                            <field name="NUM">2000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

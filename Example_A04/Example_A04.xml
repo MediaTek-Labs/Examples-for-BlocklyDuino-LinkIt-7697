@@ -1,0 +1,89 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="596" x="113" y="38">
+    <next>
+      <block type="initializes_loop" id="600">
+        <statement name="CONTENT">
+          <block type="inout_digital_write" id="621">
+            <field name="PIN">15</field>
+            <field name="STAT">LOW</field>
+            <next>
+              <block type="inout_digital_write" id="622">
+                <field name="PIN">16</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_digital_write" id="623">
+                    <field name="PIN">17</field>
+                    <field name="STAT">HIGH</field>
+                    <next>
+                      <block type="delay_custom" id="630" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="631">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="inout_digital_write" id="637">
+                            <field name="PIN">15</field>
+                            <field name="STAT">LOW</field>
+                            <next>
+                              <block type="inout_digital_write" id="638">
+                                <field name="PIN">16</field>
+                                <field name="STAT">LOW</field>
+                                <next>
+                                  <block type="inout_digital_write" id="639">
+                                    <field name="PIN">17</field>
+                                    <field name="STAT">HIGH</field>
+                                    <next>
+                                      <block type="delay_custom" id="640" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="641">
+                                            <field name="NUM">1000</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="inout_digital_write" id="643">
+                                            <field name="PIN">15</field>
+                                            <field name="STAT">LOW</field>
+                                            <next>
+                                              <block type="inout_digital_write" id="644">
+                                                <field name="PIN">16</field>
+                                                <field name="STAT">LOW</field>
+                                                <next>
+                                                  <block type="inout_digital_write" id="645">
+                                                    <field name="PIN">17</field>
+                                                    <field name="STAT">LOW</field>
+                                                    <next>
+                                                      <block type="delay_custom" id="646" inline="false">
+                                                        <value name="DELAY_TIME">
+                                                          <block type="math_number" id="647">
+                                                            <field name="NUM">1000</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

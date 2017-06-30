@@ -1,0 +1,65 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="860" x="13" y="-112">
+    <next>
+      <block type="initializes_loop" id="861">
+        <statement name="CONTENT">
+          <block type="controls_if" id="948" inline="false">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="964" inline="true">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="inout_highlow" id="1004">
+                    <field name="BOOL">HIGH</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="inout_digital_read" id="904">
+                    <field name="PIN">2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="serial_println" id="1015" inline="false">
+                <value name="CONTENT">
+                  <block type="text" id="1016">
+                    <field name="TEXT">按鈕按下</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="inout_buildin_led" id="1038">
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="serial_println" id="1017" inline="false">
+                <value name="CONTENT">
+                  <block type="text" id="1018">
+                    <field name="TEXT">按鈕放開</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="inout_buildin_led" id="1039">
+                    <field name="STAT">LOW</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="1025" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="1026">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

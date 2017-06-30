@@ -1,0 +1,73 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1" x="38" y="13">
+    <statement name="CONTENT">
+      <block type="variables_set" id="30" inline="true">
+        <field name="TYPE">Boolean</field>
+        <field name="VAR">led</field>
+        <value name="VALUE">
+          <block type="logic_boolean" id="36">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="controls_if" id="42" inline="false">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="variables_get" id="64">
+                <field name="TYPE">Boolean</field>
+                <field name="VAR">led</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="112" inline="true">
+                <field name="TYPE">Boolean</field>
+                <field name="VAR">led</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="113">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="inout_digital_write" id="144">
+                    <field name="PIN">2</field>
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="variables_set" id="100" inline="true">
+                <field name="TYPE">Boolean</field>
+                <field name="VAR">led</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="101">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="inout_digital_write" id="145">
+                    <field name="PIN">2</field>
+                    <field name="STAT">LOW</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="110" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="111">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

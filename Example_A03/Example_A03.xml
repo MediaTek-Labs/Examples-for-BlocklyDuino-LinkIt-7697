@@ -1,0 +1,148 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1" x="50" y="14">
+    <statement name="CONTENT">
+      <block type="variables_set" id="30" inline="true">
+        <field name="TYPE">Number</field>
+        <field name="VAR">led</field>
+        <value name="VALUE">
+          <block type="math_number" id="160">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="165" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">fade</field>
+            <value name="VALUE">
+              <block type="math_number" id="175">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="187">
+                <field name="PIN">2</field>
+                <field name="STAT">LOW</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="inout_analog_write" id="405" inline="true">
+            <field name="PIN">2</field>
+            <value name="NUM">
+              <block type="variables_get" id="407">
+                <field name="TYPE">Number</field>
+                <field name="VAR">led</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="268" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">led</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="278" inline="true">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="279">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">led</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="286">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">fade</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="292" inline="false">
+                    <mutation elseif="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="302" inline="true">
+                        <field name="OP">LTE</field>
+                        <value name="A">
+                          <block type="variables_get" id="303">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">led</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="328">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="335" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">fade</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="357">
+                            <field name="NUM">5</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id="369" inline="true">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="variables_get" id="370">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">led</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="371">
+                            <field name="NUM">255</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="variables_set" id="372" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">fade</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="373">
+                            <field name="NUM">-5</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="serial_println" id="380" inline="false">
+                        <value name="CONTENT">
+                          <block type="variables_get" id="388">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">led</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="395" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="396">
+                                <field name="NUM">30</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

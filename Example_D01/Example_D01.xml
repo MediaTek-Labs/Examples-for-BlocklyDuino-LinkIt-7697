@@ -1,0 +1,104 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1048" x="13" y="-112">
+    <statement name="CONTENT">
+      <block type="linkit_ble_periphral" id="1072" inline="false">
+        <value name="NAME">
+          <block type="text" id="1073">
+            <field name="TEXT">LinkIt 7697</field>
+          </block>
+        </value>
+        <value name="SERVICE">
+          <block type="text" id="1201">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+          </block>
+        </value>
+        <statement name="BLE_CONTENT">
+          <block type="linkit_ble_Characteristic" id="1086" inline="false">
+            <field name="CHARACTERISTIC_TYPE">LBLECharacteristicInt</field>
+            <field name="TYPE">LBLE_READ | LBLE_WRITE</field>
+            <value name="CHARACTERISTIC">
+              <block type="text" id="1214">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="serial_println" id="1088" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="1089">
+                <field name="TEXT">藍芽裝置建立成功</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1052">
+        <statement name="CONTENT">
+          <block type="controls_if" id="1095" inline="false">
+            <value name="IF0">
+              <block type="linkit_ble_periphral_is_written" id="1107" inline="true">
+                <value name="CHARACTERISTIC">
+                  <block type="text" id="1215">
+                    <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="1111" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">data</field>
+                <value name="VALUE">
+                  <block type="linkit_ble_periphral_get_value" id="1123" inline="true">
+                    <value name="CHARACTERISTIC">
+                      <block type="text" id="1216">
+                        <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_println" id="1137" inline="false">
+                    <value name="CONTENT">
+                      <block type="variables_get" id="1143">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">data</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="linkit_ble_periphral_write" id="1228" inline="true">
+                <field name="TYPE">int</field>
+                <value name="CHARACTERISTIC">
+                  <block type="text" id="1229">
+                    <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+                  </block>
+                </value>
+                <value name="VALUE">
+                  <block type="math_number" id="1239">
+                    <field name="NUM">123456789</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="1246" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="1247">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

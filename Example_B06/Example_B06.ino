@@ -19,11 +19,11 @@ void setup()
 void loop()
 {
   SeeedOled.clearDisplay();
-  SeeedOled.setTextXY(0, 1);
-  SeeedOled.putNumber(1234567);
-  SeeedOled.setTextXY(0, 2);
-  SeeedOled.putFloat(3.14156);
-  SeeedOled.setTextXY(0, 3);
+  SeeedOled.setTextXY(0, 0);
+  SeeedOled.putNumber(54321);
+  SeeedOled.setTextXY(1, 0);
+  SeeedOled.putFloat(3.1415);
+  SeeedOled.setTextXY(2, 0);
   SeeedOled.putString("Hello");
   delay(1000);
 }

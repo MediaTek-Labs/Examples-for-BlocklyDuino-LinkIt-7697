@@ -1,0 +1,79 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="508" x="13" y="38">
+    <next>
+      <block type="initializes_loop" id="512">
+        <statement name="CONTENT">
+          <block type="adxl345_detect" id="828">
+            <field name="SENSOR">DUMMY</field>
+            <next>
+              <block type="controls_if" id="856" inline="false">
+                <value name="IF0">
+                  <block type="adxl345_gesture_detected" id="837">
+                    <field name="SENSOR">DUMMY</field>
+                    <field name="GESTURE">Tap</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="serial_println" id="864" inline="false">
+                    <value name="CONTENT">
+                      <block type="text" id="865">
+                        <field name="TEXT">ADXL345 : 偵測到 點一下</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="866" inline="false">
+                    <value name="IF0">
+                      <block type="adxl345_gesture_detected" id="867">
+                        <field name="SENSOR">DUMMY</field>
+                        <field name="GESTURE">DoubleTap</field>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="serial_println" id="868" inline="false">
+                        <value name="CONTENT">
+                          <block type="text" id="869">
+                            <field name="TEXT">ADXL345 : 偵測到 點兩下</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id="870" inline="false">
+                        <value name="IF0">
+                          <block type="adxl345_gesture_detected" id="871">
+                            <field name="SENSOR">DUMMY</field>
+                            <field name="GESTURE">Activity</field>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="serial_println" id="872" inline="false">
+                            <value name="CONTENT">
+                              <block type="text" id="873">
+                                <field name="TEXT">ADXL345 : 偵測到 移動</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="delay_custom" id="880" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="881">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

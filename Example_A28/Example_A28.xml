@@ -1,0 +1,265 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="508" x="13" y="38">
+    <statement name="CONTENT">
+      <block type="neopixel_begin" id="1112">
+        <field name="NUM">60</field>
+        <field name="PIN">2</field>
+        <field name="BRIGHTNESS">30</field>
+        <next>
+          <block type="variables_set" id="1436" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">color</field>
+            <value name="VALUE">
+              <block type="math_number" id="1452">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="1465" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">add</field>
+                <value name="VALUE">
+                  <block type="math_number" id="1481">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="512">
+        <statement name="CONTENT">
+          <block type="controls_for" id="1241" inline="true">
+            <field name="VAR">i</field>
+            <value name="FROM">
+              <block type="math_number" id="1242">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="1243">
+                <field name="NUM">19</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="neopixel_custom_setpixelcolor" id="1133" inline="true">
+                <value name="TARGET">
+                  <block type="variables_get" id="1248">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">i</field>
+                  </block>
+                </value>
+                <value name="R">
+                  <block type="variables_get" id="1520">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">color</field>
+                  </block>
+                </value>
+                <value name="G">
+                  <block type="math_number" id="1492">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="1493">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_for" id="1731" inline="true">
+                <field name="VAR">i</field>
+                <value name="FROM">
+                  <block type="math_number" id="1732">
+                    <field name="NUM">20</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="1733">
+                    <field name="NUM">39</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="neopixel_custom_setpixelcolor" id="1734" inline="true">
+                    <value name="TARGET">
+                      <block type="variables_get" id="1735">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">i</field>
+                      </block>
+                    </value>
+                    <value name="R">
+                      <block type="math_number" id="1737">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="G">
+                      <block type="variables_get" id="1736">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">color</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="1738">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_for" id="1739" inline="true">
+                    <field name="VAR">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="1740">
+                        <field name="NUM">40</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="1741">
+                        <field name="NUM">59</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="neopixel_custom_setpixelcolor" id="1742" inline="true">
+                        <value name="TARGET">
+                          <block type="variables_get" id="1743">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <value name="R">
+                          <block type="math_number" id="1746">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="G">
+                          <block type="math_number" id="1745">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="1744">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">color</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="neopixel_show" id="1730">
+                        <next>
+                          <block type="variables_set" id="1545" inline="true">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">color</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="1556" inline="true">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <block type="variables_get" id="1565">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">color</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="1574">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">add</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_if" id="1526" inline="false">
+                                <mutation elseif="1"></mutation>
+                                <value name="IF0">
+                                  <block type="logic_compare" id="1601" inline="true">
+                                    <field name="OP">GTE</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="1610">
+                                        <field name="TYPE">Number</field>
+                                        <field name="VAR">color</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="1626">
+                                        <field name="NUM">255</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="variables_set" id="1640" inline="true">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">add</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="1671">
+                                        <field name="NUM">-1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                                <value name="IF1">
+                                  <block type="logic_compare" id="1676" inline="true">
+                                    <field name="OP">LTE</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="1677">
+                                        <field name="TYPE">Number</field>
+                                        <field name="VAR">color</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="1678">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO1">
+                                  <block type="variables_set" id="1679" inline="true">
+                                    <field name="TYPE">Number</field>
+                                    <field name="VAR">add</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="1680">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="serial_println" id="1688" inline="false">
+                                    <value name="CONTENT">
+                                      <block type="variables_get" id="1712">
+                                        <field name="TYPE">Number</field>
+                                        <field name="VAR">color</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="delay_custom" id="1719" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="1720">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

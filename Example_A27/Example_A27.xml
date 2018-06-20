@@ -1,0 +1,154 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="508" x="13" y="38">
+    <statement name="CONTENT">
+      <block type="lcd_i2c_setting" id="981">
+        <field name="LCD_DIM">2004</field>
+        <field name="PIN">PIN</field>
+        <field name="I2C_ADDRESS">0x27</field>
+        <next>
+          <block type="variables_set" id="1036" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">counter</field>
+            <value name="VALUE">
+              <block type="math_number" id="1047">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="512">
+        <statement name="CONTENT">
+          <block type="lcd_i2c_clear" id="999">
+            <next>
+              <block type="lcd_i2c_set_cursor" id="1008" inline="true">
+                <value name="ROW">
+                  <block type="math_number" id="1009">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="COL">
+                  <block type="math_number" id="1010">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="lcd_i2c_put" id="1019" inline="false">
+                    <value name="VALUE">
+                      <block type="text" id="1020">
+                        <field name="TEXT">HELLO</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="lcd_i2c_set_cursor" id="1021" inline="true">
+                        <value name="ROW">
+                          <block type="math_number" id="1022">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="COL">
+                          <block type="math_number" id="1023">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="lcd_i2c_put" id="1024" inline="false">
+                            <value name="VALUE">
+                              <block type="text" id="1025">
+                                <field name="TEXT">LinkIt 7697</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="lcd_i2c_set_cursor" id="1088" inline="true">
+                                <value name="ROW">
+                                  <block type="math_number" id="1089">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="COL">
+                                  <block type="math_number" id="1090">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="lcd_i2c_put" id="1091" inline="false">
+                                    <value name="VALUE">
+                                      <block type="text" id="1092">
+                                        <field name="TEXT">Counter:</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="lcd_i2c_set_cursor" id="1093" inline="true">
+                                        <value name="ROW">
+                                          <block type="math_number" id="1094">
+                                            <field name="NUM">9</field>
+                                          </block>
+                                        </value>
+                                        <value name="COL">
+                                          <block type="math_number" id="1095">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="lcd_i2c_put" id="1096" inline="false">
+                                            <value name="VALUE">
+                                              <block type="variables_get" id="1102">
+                                                <field name="TYPE">Number</field>
+                                                <field name="VAR">counter</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="variables_set" id="1063" inline="true">
+                                                <field name="TYPE">Number</field>
+                                                <field name="VAR">counter</field>
+                                                <value name="VALUE">
+                                                  <block type="math_arithmetic" id="1058" inline="true">
+                                                    <field name="OP">ADD</field>
+                                                    <value name="A">
+                                                      <block type="variables_get" id="1068">
+                                                        <field name="TYPE">Number</field>
+                                                        <field name="VAR">counter</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number" id="1079">
+                                                        <field name="NUM">1</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="delay_custom" id="1032" inline="false">
+                                                    <value name="DELAY_TIME">
+                                                      <block type="math_number" id="1033">
+                                                        <field name="NUM">1000</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

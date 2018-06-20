@@ -1,0 +1,80 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="508" x="13" y="38">
+    <next>
+      <block type="initializes_loop" id="512">
+        <statement name="CONTENT">
+          <block type="serial_print" id="533" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="534">
+                <field name="TEXT">PM1.0:</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="544" inline="false">
+                <value name="CONTENT">
+                  <block type="pms_read" id="586">
+                    <field name="MODEL">PMS5003</field>
+                    <field name="RX_PIN">2</field>
+                    <field name="TX_PIN">3</field>
+                    <field name="PM_LEVEL">pms_read_PM1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_print" id="535" inline="false">
+                    <value name="CONTENT">
+                      <block type="text" id="536">
+                        <field name="TEXT">PM2.5:</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="546" inline="false">
+                        <value name="CONTENT">
+                          <block type="pms_read" id="587">
+                            <field name="MODEL">PMS5003</field>
+                            <field name="RX_PIN">2</field>
+                            <field name="TX_PIN">3</field>
+                            <field name="PM_LEVEL">pms_read_PM2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_print" id="588" inline="false">
+                            <value name="CONTENT">
+                              <block type="text" id="589">
+                                <field name="TEXT">PM10:</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_println" id="590" inline="false">
+                                <value name="CONTENT">
+                                  <block type="pms_read" id="591">
+                                    <field name="MODEL">PMS5003</field>
+                                    <field name="RX_PIN">2</field>
+                                    <field name="TX_PIN">3</field>
+                                    <field name="PM_LEVEL">pms_read_PM1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="delay_custom" id="571" inline="false">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="572">
+                                        <field name="NUM">1000</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
